@@ -7,11 +7,6 @@ category: [talks, nixos]
 On February 22. and 23. Oslo NixOS User Group hosted a mini conference at
 Hackeriet. We had a variety of talks about different parts of the Nix ecosystem.
 
-You can find recordings of all the talks from [day
-1](https://www.youtube.com/watch?v=q80vJ0UiQ_k) and [day
-2](https://www.youtube.com/watch?v=9mcfadAoie8) on our [Youtube
-channel](https://www.youtube.com/channel/UCyZKWsKG3uVEfgjNwzfPhhQ).
-
 ## DAY 1
 
 ### The Nix ecosystem
@@ -24,7 +19,9 @@ the different Nix components and tools.
 Some take-aways from this talk:
 
 - The [Nix pkgs](https://github.com/NixOS/nixpkgs) repository on Github is
-  **huge**, 49 000 packages! So this is a very active community.
+  **huge**, over 49 000 packages! So this is a very active community. According
+  to [Repology](https://repology.org/repositories/statistics/newest) it's the
+  most up-to-date repo right now!
 - The community works to keep packages as up to date as possible, and it is
   relatively easy to become a contributor.
 - They try to remove unmaintained or EOL packages (unless too many other
@@ -41,6 +38,8 @@ different languages. This slide is an example of how Etu uses nix-shell to
 get the dependencies needed for generating the slides of this presentation.
 Nix has grown a lot in the last five years, and it is pretty exciting to
 follow that development further down the road.
+
+[Watch the talk](https://www.youtube.com/watch?v=9Su89RLoh0Q)
 
 The slides are available on
 [Github](https://github.com/etu/presentations/tree/master/oslo-nixos-meetup-2020-02-22)
@@ -68,6 +67,8 @@ Some things to note about NixOps:
 
 ![Kim Lindberger presentation
 slide](/images/nixos_minicon_2020/talyz_presentation.png)
+
+[Watch the talk](https://www.youtube.com/watch?v=SoHtccHNOJ8)
 
 You can find the slides and the examples used in the demos on
 [Github](https://github.com/talyz/presentations/tree/master/nixops-oslo-2020)
@@ -97,6 +98,8 @@ A few things to consider:
 Lots of questions were asked by the audience during this talk, and hopefully
 some light was shed on the mysteries of the Nix language by the end.
 
+[Watch the talk](https://www.youtube.com/watch?v=tJHb8Y_LOjE)
+
 Then we ate some pizza and hung out Hackeriet style!  ![Waiting for pizza to
 arrive](/images/nixos_minicon_2020/nix_hangout.jpg)
 
@@ -124,6 +127,8 @@ by Adam Höse.
   git and htop. Really cool!
   
 ![Day 2 of the con](/images/nixos_minicon_2020/day2_overview.jpg)
+
+[Watch the talk](https://www.youtube.com/watch?v=9mcfadAoie8)
 
 After this talk we had a informal session of hacking on Nix things and
 socializing.
