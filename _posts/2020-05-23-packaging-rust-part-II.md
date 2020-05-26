@@ -6,14 +6,14 @@ category: infrastructure
 ---
 ![rusty-steel](/images/stainless_steel_iron_metal_rusty_weathered.jpeg)
 
-Lets do another dive into packaging Rust for Debian with a slightly more complicated example.
+Let's do another dive into packaging Rust for Debian with a slightly more complicated example.
 
-One great tool in the packagers toolbox is [cargo-debstatus](https://crates.io/crates/cargo-debstatus).
+One great tool in the packager's toolbox is [cargo-debstatus](https://crates.io/crates/cargo-debstatus).
 By running it in the root of your crate you will get a list of your dependencies, together
-with information regarding it's packaging status in Debian.
+with information regarding its packaging status in Debian.
 
-For `ripasso` a part of the tree looks like this at the time of writing, `ripasso` depends on `gpgme`
-which depends on a number of other Rust libraries (and a number of native ones, that isn't shown here).
+For `ripasso` a part of the tree looks like below at the time of writing. `ripasso` depends on `gpgme`
+which depends on a number of other Rust libraries (and a number of native ones which aren't shown here).
 ```
 ├── gpgme v0.9.2
 │   ├── bitflags v1.2.1 (in debian)
@@ -28,11 +28,10 @@ which depends on a number of other Rust libraries (and a number of native ones, 
 │   ├── once_cell v1.3.1 (in debian)
 │   ├── smallvec v1.1.0 (in debian)
 │   └── static_assertions v1.1.0
-
 ```
 
 One of the dependencies is [static_assertions](https://crates.io/crates/static_assertions) which
-actually already is packaged in Debian, but version 0.3.3 and we need 1.1.0. Lets investigate how
+is actually already packaged in Debian, but version 0.3.3 and we need 1.1.0. Let's investigate how
 to fix this one.
 
 In order to verify that we won't break any other package by upgrading the existing Debian package
@@ -49,7 +48,7 @@ Versions of rdeps of rust-static-assertions in unstable, that also exist in test
 ```
 
 Here we see that the [lexical-core](https://crates.io/crates/lexical-core) package depends on static-assertions
-and a quick `git clone` and compile confirms that it doesn't compile with version 1.1.0.
+and a quick `git clone` and compilation confirms that it doesn't compile with version 1.1.0.
 
 We can take this one step further
 
@@ -111,27 +110,27 @@ So in order to package `static_assertions` so that we can package `gpgme` we can
 different strategies:
 
 1. Package both versions of `static_assertions`
-2. Upgrade `lexical-core`, `nom` and everything `nom` depends on to newer versions
-3. Patch version 0.4.3 of `lexical-core` to use a newer version of `static_assertions`
+1. Upgrade `lexical-core`, `nom` and everything `nom` depends on to newer versions
+1. Patch version 0.4.3 of `lexical-core` to use a newer version of `static_assertions`
 
-### Package both versions of `static_assertions`
+### Packaging both versions of `static_assertions`
 
 This is a working strategy, but packaging both means that we need to create a new package for
 version 0.3 of `static_assertions`. New packages in Debian go through the new queue, where a member
-of the ftp masters team need to manually verify so that it doesn't contain any non-free software.
+of the ftp masters team needs to manually verify so that it doesn't contain any non-free software.
 
 Therefore we will not choose this strategy.
 
-### Upgrade `lexical-core`, `nom` and everything `nom` depends on to newer versions
+### Upgrading `lexical-core`, `nom` and everything `nom` depends on to newer versions
 
 There exists a new version of `lexical-core` that depend on `static_assertions` 1, but the newer
-version of `nom` is a beta version of `nom` 6, and upgrade to that version would mean that we would
+version of `nom` is a beta version of `nom` 6, and upgrading to that version would mean that we would
 need to patch all the incompatibilities in the applications that use nom.
 
 A lot of non-trivial work, specially as we in that case would like to upstream the patches so that
 the maintenance burden doesn't grow too much.
 
-### Patch version 0.4.3 of `lexical-core` to use a newer version of `static_assertions`
+### Patching version 0.4.3 of `lexical-core` to use a newer version of `static_assertions`
 
 It turns out that there is an upgrade [commit](https://github.com/Alexhuszagh/rust-lexical/commit/1e2b1ab6561903e44b5fdaef923e1a1c1f79148d)
 in `lexical-core` that applies cleanly to version 0.4.3. This is what we will use.
@@ -140,5 +139,5 @@ So we take that commit as a patch and place it into the [patches directory](http
 together with a [series file](https://salsa.debian.org/rust-team/debcargo-conf/-/blob/master/src/lexical-core/debian/patches/series)
 that just lists what order to patches should be applied in.
 
-And that enables us to upgrade the `static_assertions` package to version 1.1.0 without breaking
+That enables us to upgrade the `static_assertions` package to version 1.1.0 without breaking
 any other package.
