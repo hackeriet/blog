@@ -6,7 +6,7 @@ category: infrastructure
 ---
 ![sequoia](/images/sequoia.jpg)
 
-Sequoia is a promising new GPG library that's written in Rust. As Rust have excellent
+Sequoia is a promising new OpenPGP library that's written in Rust. As Rust has excellent
 interoperability with C it also exposes itself as a C library in the [sequoia_openpgp_ffi](https://docs.sequoia-pgp.org/sequoia_openpgp_ffi/index.html)
 crate. This would be the way that you would call this library from other programming languages,
 as C often acts as the lowest common denominator.
@@ -72,14 +72,14 @@ It seems like I was the first person to run a fuzzer against that function, so I
 1. An [attempt to read nonexisting data](https://gitlab.com/sequoia-pgp/sequoia/-/issues/516)
 
 The framework is very explicit in telling us what data caused the broken behaviour, so it's trivial
-to take that input and build a unit case from it. This helps the maintainers to triage and fix the problems.
+to take that input and build a unit test from it. This helps the maintainers to triage and fix the problems.
 
-It also can also try to minimize the test input automatically, so to keep the tests small. But
+It can also try to minimize the test input automatically, so to keep the tests small. But
 that functionality seemed to be broken.
 
 ### Security Implications
 
-Since this is Rust, these panics doesn't cause undefined behaviour as they might have done in for example C.
+Since this is Rust, these panics don't cause undefined behaviour as they might have done in for example C.
 So these findings will at most cause a denial of service due to the process crashing.
 
 ### Thanks
