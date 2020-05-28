@@ -34,7 +34,7 @@ cd sequioa
 cargo fuzz init
 ```
 
-This creates the setup you need for fuzzing and adds a skeleton file in `fuzz/fuzz_targets/fuzz_target_1.rs.rs`
+This creates the setup you need for fuzzing and adds a skeleton file in `fuzz/fuzz_targets/fuzz_target_1.rs`
 
 I implemented the target like this:
 
