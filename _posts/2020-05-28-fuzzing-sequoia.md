@@ -6,7 +6,7 @@ category: infrastructure
 ---
 ![sequoia](/images/sequoia.jpg)
 
-Sequoia is a promising new OpenPGP library that's written in Rust. As Rust has excellent
+[Sequoia](https://sequoia-pgp.org/) is a promising new OpenPGP library that's written in Rust. As Rust has excellent
 interoperability with C it also exposes itself as a C library in the [sequoia_openpgp_ffi](https://docs.sequoia-pgp.org/sequoia_openpgp_ffi/index.html)
 crate. This would be the way that you would call this library from other programming languages,
 as C often acts as the lowest common denominator.
