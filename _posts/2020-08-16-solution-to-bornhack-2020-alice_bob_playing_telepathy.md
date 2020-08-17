@@ -18,7 +18,7 @@ crypto
 
 #### Writeup
 
-This was a challenge centered around attacking the lua runtime in a C program.
+This was a challenge centered around attacking the Lua runtime in a C program.
 
 We got this program
 
@@ -101,19 +101,20 @@ int main(int argc, char **argv){
 }
 ```
 
-It initializes 2 different `lua_State` objects from the same source code that the attacker supplies.
-Source that should have one function `alice` that accepts a parameter, and another function `bob`
+It initializes two different `lua_State` objects from the same source code that the attacker supplies.
+Source that should have one function named `alice` that accepts a parameter, and another function `bob`
 that should return a number.
 
-It then generates a series of 1000 random numbers between 0 and 100 and sends to the `alice` function
-in the first `lua_State` and reads a number from the `bob` function in the second `lua_State`.
+It then generates a series of 1000 random numbers between 0 and 100. Each of those gets sent to the
+`alice` function in the first `lua_State` and a number is read from the `bob` function
+in the second `lua_State`. Those two number are verified to be equal.
 
 This means that we need to communicate between functions in different `lua_State`.
 
 That the lua math module is loaded gave us a hint, and the random number generator seed turns out to
 not be part of the `lua_State` object in lua 5.3 and below, this security hole has been fixed in 5.4.
 
-We wrote this function to reverse the relationship between the randomseed and the random function.
+We wrote this function to reveal the relationship between the `randomseed()` and the `random()` function.
 
 ```lua
 
