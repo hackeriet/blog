@@ -18,7 +18,7 @@ crypto
 
 #### Writeup
 
-This was the starting challenge in the crypto category, just a couple of different encodings.
+This was the first challenge in the crypto category, just a couple of different encodings.
 
 Challenge text:
 
