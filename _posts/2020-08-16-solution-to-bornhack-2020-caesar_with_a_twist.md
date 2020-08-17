@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Solution to Bornhack 2020 CTF challenge nc333"
+title: "Solution to Bornhack 2020 CTF challenge caesar_with_a_twist"
 author: capitol
 category: ctf
 ---
 
-![tent_village](/images/tent_village.jpg)
+![caesar](/images/caesar.jpg)
 
 ##### Name:
 caesar_with_a_twist
