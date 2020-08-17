@@ -26,7 +26,7 @@ We got an encrypted text:
 CLLJE{QtLo_wF_r_YqOI_bXrH_gpJw_WxPh_Sm_QraVmo_Se_IoSvvn_XyR_GeU_Ack_EDRDTIosscf_rj}
 ```
 
-And a python program that described how it was generated, analysing that program showed that
+And a Python program that described how it was generated, analysing that program showed that
 it was a regular substitution cipher where the substitution key was changed for each character.
 The key was a function of that characters position in the string.
 
