@@ -18,10 +18,10 @@ crypto
 
 #### Writeup
 
-This was the second challenge in the crypto category, this time a lot of different encodings.
+This was the second challenge in the crypto category, this time with a lot of different encodings.
 
-We got [this file]({% link /assets/nc333.zip %}) that contained a large number of encodings strings
-inside each other.
+We got [this file]({% link /assets/nc333.zip %}) that contained a large number of encoded strings
+nested inside each other like a russian doll.
 
 We wrote a small rust program to handle it:
 
