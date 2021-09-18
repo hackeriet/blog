@@ -7,7 +7,7 @@ category: security
 ![pass-passwordstore](/images/pass-passwordstore.png)
 
 [`pass`](https://www.passwordstore.org/) is a password manager that encrypts your or your
-team's passwords with GPG and those can be stored in a Git repository.
+team's passwords with GPG and optionally stores them in a Git repository.
 
 Each password is encrypted in its own file, often named after the service and username.
 For example the password for the user `richard` on the service Spotify might be named
@@ -33,10 +33,14 @@ information or resources from another zone.
 
 ## The Attack
 
-If an attacker controls the central Git server or one of the other members' machines, and
-also controls one of the services already in the password store they can do the following:
+If an attacker controls the following:
 
-Rename one of the password files in the Git repository to something else.
+ * The central Git server or one of the other members' machines
+ * One of the services that have a password already in the password store
+
+Then they can do the following:
+
+Rename one of the password files in the Git repository to the password file of the controlled service.
 
 `pass` doesn't correctly verify that the content of file matches the filename, so a user
 might be tricked to decrypting the wrong password and send that to a service that the
