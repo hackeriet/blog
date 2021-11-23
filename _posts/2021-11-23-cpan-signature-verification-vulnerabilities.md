@@ -26,11 +26,15 @@ attack.
 * [CVE-2020-16155] CPAN::Checksums 2.12 does not uniquely define signed data.
 * [CVE-2020-16156] CPAN 2.28 allows Signature Verification Bypass
 
+For more information see [Addressing CPAN vulnerabilities related to checksums](http://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html) by Neil Bowers.
+
 # Mitigation
 
 Users should ensure that their CPAN client is configured to use a trusted TLS
 (https) protected mirror as signature verification can be bypassed, and signed
 `CHECKSUMS` cannot be relied upon for security.
+
+
 
 # Signature Verification Bypass
 
@@ -181,6 +185,7 @@ iEYEARECAAYFAl8bBU4ACgkQMo2oZ0UPiewySQCfd00WKH3QfVO/GjcYvDosimBs
 
 # References
 
+- [http://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html](http://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html)
 - [https://github.com/andk/cpan-checksums](https://github.com/andk/cpan-checksums)
 - [https://github.com/andk/cpanpm/blob/ac0963601fe22c3a0b6cc9a8f0d51da5fd6e41ef/lib/CPAN/Distribution.pm#L1182](https://github.com/andk/cpanpm/blob/ac0963601fe22c3a0b6cc9a8f0d51da5fd6e41ef/lib/CPAN/Distribution.pm#L1182)
 - [https://github.com/miyagawa/cpanminus/blob/7b574ede70cebce3709743ec1727f90d745e8580/Menlo-Legacy/lib/Menlo/CLI/Compat.pm#L1491](https://github.com/miyagawa/cpanminus/blob/7b574ede70cebce3709743ec1727f90d745e8580/Menlo-Legacy/lib/Menlo/CLI/Compat.pm#L1491)
