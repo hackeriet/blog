@@ -187,7 +187,7 @@ iEYEARECAAYFAl8bBU4ACgkQMo2oZ0UPiewySQCfd00WKH3QfVO/GjcYvDosimBs
 
 - [http://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html](http://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html)
 - [https://github.com/andk/cpan-checksums](https://github.com/andk/cpan-checksums)
-- [https://github.com/andk/cpanpm/blob/ac0963601fe22c3a0b6cc9a8f0d51da5fd6e41ef/lib/CPAN/Distribution.pm#L1182](https://github.com/andk/cpanpm/blob/ac0963601fe22c3a0b6cc9a8f0d51da5fd6e41ef/lib/CPAN/Distribution.pm#L1182)
+- [https://github.com/andk/cpanpm/blob/ac0963601fe22c3a0b6cc9a8f0d51da5fd6e41ef/lib/CPAN/Distribution.pm#L1474](https://github.com/andk/cpanpm/blob/ac0963601fe22c3a0b6cc9a8f0d51da5fd6e41ef/lib/CPAN/Distribution.pm#L1474)
 - [https://github.com/miyagawa/cpanminus/blob/7b574ede70cebce3709743ec1727f90d745e8580/Menlo-Legacy/lib/Menlo/CLI/Compat.pm#L1491](https://github.com/miyagawa/cpanminus/blob/7b574ede70cebce3709743ec1727f90d745e8580/Menlo-Legacy/lib/Menlo/CLI/Compat.pm#L1491)
 
 # Acknowledgements
