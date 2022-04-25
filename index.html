@@ -3,21 +3,25 @@ layout: default
 ---
 
 <div class="posts">
-    {% assign posts_by_month = site.posts | group_by_exp: "item", "item.date | date: '%Y'" %}
-
     <div class="container-fluid">
-        {% for month in posts_by_month %}
-        <b>{{ month.name }}</b>
-        <ul id="posts" style="list-style-type:none;">
-            {% for post in month.items %}
-            <li>
-                <span>{{ post.date | date: "%d %b" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
-            </li>
+        <div class="post-list">
+            {% for post in site.posts %}
+                <div class="post">
+                    <div>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </div>
+                    <div class="byline">
+                        <time datetime={{ post.date | date: "%Y-%m-%d" }}>{{ post.date | date_to_string }}
+                            <time class="ago" datetime={{ post.date }}></time>
+                        </time>
+                        &middot;
+                        {% for category in post.category %}
+                            <span class="category">{{ category }}</span>
+                            {% endfor %}
+                    </div>
+            </div>
             {% endfor %}
-        </ul>
-        {% endfor %}
+        </div>
     </div>
-
-
 </div>
 
