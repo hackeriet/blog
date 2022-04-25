@@ -13,14 +13,6 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-      <script type="text/javascript">
-          function showStuff(id) {
-              if(document.getElementById(id).style.display == 'block') {
-                  document.getElementById(id).style.display = 'none';
-              } else {
-                  document.getElementById(id).style.display = 'block';
-              }
-          }
       </script>
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -70,23 +62,6 @@
     {% endunless %}
     {% endif %}
     {% endfor %}
-
-    <div class="categories">
-        <p>Categories</p>
-
-        {% for ct in cats %}
-        <a onClick="showStuff('cat-#{{ ct | slugify }}')" class="codinfox-category-mark" style="color:#999;text-decoration: none;"> {{ ct }} </a> &nbsp;&nbsp;
-        <div id="cat-#{{ ct | slugify }}">
-        {% for post in site.posts %}
-        {% if post.category contains ct %}
-        <p>
-            <a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small>
-        </p>
-        {% endif %}
-        {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
 
     <div class="wrapper-footer">
       <div class="container">
