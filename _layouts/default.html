@@ -13,14 +13,31 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-      <script type="text/javascript">
-          function showStuff(id) {
-              if(document.getElementById(id).style.display == 'block') {
-                  document.getElementById(id).style.display = 'none';
-              } else {
-                  document.getElementById(id).style.display = 'block';
-              }
-          }
+
+
+    <script type="text/javascript">
+     // From https://github.com/odyniec/tinyAgo-js
+     function ago(val) {
+       val = 0 | (Date.now() - val) / 1000;
+       var unit, length = { second: 60, minute: 60, hour: 24, day: 7, week: 4.35,
+                            month: 12, year: 10000 }, result;
+       for (unit in length) {
+         result = val % length[unit];
+         if (!(val = 0 | val / length[unit]))
+           return result + ' ' + (result-1 ? unit + 's' : unit);
+       }
+     }
+     document.addEventListener("DOMContentLoaded", function(event) {
+       let times = document.getElementsByClassName('ago')
+       for (let t of times) {
+         let datetime = t.getAttribute('datetime')
+         if (!datetime) continue;
+         let date = new Date(datetime);
+         t.innerHTML = "&middot; " + ago(date) + " ago"
+       }
+     });
+
+
       </script>
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -70,23 +87,6 @@
     {% endunless %}
     {% endif %}
     {% endfor %}
-
-    <div class="categories">
-        <p>Categories</p>
-
-        {% for ct in cats %}
-        <a onClick="showStuff('cat-#{{ ct | slugify }}')" class="codinfox-category-mark" style="color:#999;text-decoration: none;"> {{ ct }} </a> &nbsp;&nbsp;
-        <div id="cat-#{{ ct | slugify }}">
-        {% for post in site.posts %}
-        {% if post.category contains ct %}
-        <p>
-            <a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small>
-        </p>
-        {% endif %}
-        {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
 
     <div class="wrapper-footer">
       <div class="container">
