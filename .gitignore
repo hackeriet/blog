@@ -11,3 +11,4 @@ package.json
 .idea
 *.iml
 .jekyll-cache
+*.kdev4
