@@ -6,7 +6,8 @@ category: infrastructure
 ---
 ![ripasso-cursive](/images/ripasso-cursive-0.4.0.png)
 
-Time passes as water under a bridge, it is yet again to release a version of ripasso. We present version 0.6.0.
+Time passes as water under a bridge, it is yet again time to release a version of ripasso.
+We present version 0.6.0.
 
 ## New Features
 
@@ -33,9 +34,9 @@ to the gpg-agent, so it doesn't require that the private key is imported into se
 Ripasso now supports otpauth urls, if there is a url on the format `otpauth://` then a MFA token
 can be copied with `ctrl-b`.
 
-#### Support the wayland copy buffer
+#### Support the Wayland copy buffer
 
-If running ripasso in a wayland environment, we now support the wayland copy buffer.
+If running ripasso in a Wayland environment, we now support the Wayland copy buffer.
 
 #### Comments in .gpg-id file
 
