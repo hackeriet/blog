@@ -6,7 +6,7 @@ category: security
 ---
   
 [HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny), is a http client included in
-Perl (since v5.13.9) and as a standalone CPAN module. It [does not verify TLS
+Perl (since v5.13.9) and also a standalone CPAN module. It [does not verify TLS
 certificates by default](https://metacpan.org/pod/HTTP::Tiny#SSL-SUPPORT) requiring users to opt-in with the `verify_SSL=>1` flag to verify the identity of the HTTPS server they are communicating with.
 
 The module is used by
@@ -52,7 +52,7 @@ Most distributions we found did not enable the certificate verification feature,
 
 ## Mitigations
 
-Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns. For addition information, please see the upstream discussion in [RFC: Making SSL_verify safer](https://github.com/chansen/p5-http-tiny/issues/152).
+Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns. For additional information, please see the upstream discussion in [RFC: Making SSL_verify safer](https://github.com/chansen/p5-http-tiny/issues/152).
 
 To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of Resource](https://cwe.mitre.org/data/definitions/1188.html) weakness, you have some options:
 
