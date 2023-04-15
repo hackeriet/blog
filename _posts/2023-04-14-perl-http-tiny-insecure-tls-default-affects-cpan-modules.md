@@ -35,7 +35,7 @@ Most distributions we found did not enable the certificate verification feature,
 
 - [CPAN.pm](https://metacpan.org/pod/CPAN) v2.34 downloads and executes code from
   `https://cpan.org` without verifying server certs.
-  ([patch](https://github.com/andk/cpanpm/pull/175))
+  ([patch](https://github.com/andk/cpanpm/commit/9c98370287f4e709924aee7c58ef21c85289a7f0))
 - [GitLab::API::v4](https://metacpan.org/dist/GitLab-API-v4) v0.26 exposes API
   secrets to a network attacker.
   ([patch](https://github.com/bluefeet/GitLab-API-v4/pull/57))
