@@ -15,7 +15,7 @@ CPAN, and likely other open source and proprietary software.
 
 > **NOTE:** This post summarizes security problems caused by the insecure default
 > and how it affects code relying on it for https. For a
-> discussion on how to address this problem, please see
+> discussion on how this is being addressed upstream, please see
 > [RFC: Making SSL_verify safer](https://github.com/chansen/p5-http-tiny/issues/152)
 
 
@@ -30,8 +30,7 @@ So we searched trough
 to find distributions using HTTP::Tiny without specifying the cert verification
 behaviour. Distros using it without mentioning `verify_SSL` somewhere in the code was flagged. See [hackeriet.github.io/cpan-http-tiny-overview](https://hackeriet.github.io/cpan-http-tiny-overview/) for the full list.
 
-Most distributions we found did not enable the certificate verification feature, potentially exposing users to [machine-in-the-middle](https://www.internetsociety.org/resources/doc/2020/fact-sheet-machine-in-the-middle-attacks/Machine-in-the-middle) attacks via a [CWE-295: Improper Certificate Validation](https://cwe.mitre.org/data/definitions/295.html) weakness.
-
+Most distributions we found did not enable the certificate verification feature, potentially exposing users to [machine-in-the-middle](https://www.internetsociety.org/resources/doc/2020/fact-sheet-machine-in-the-middle-attacks/Machine-in-the-middle) attacks via a [CWE-295: Improper Certificate Validation](https://cwe.mitre.org/data/definitions/295.html) weakness. 
 
 - [CPAN.pm](https://metacpan.org/pod/CPAN) v2.34 downloads and executes code from
   `https://cpan.org` without verifying server certs.
@@ -53,7 +52,7 @@ Most distributions we found did not enable the certificate verification feature,
 
 ## Mitigations
 
-Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns.
+Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns. For addition information, please see the upstream discussion in [RFC: Making SSL_verify safer](https://github.com/chansen/p5-http-tiny/issues/152).
 
 To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of Resource](https://cwe.mitre.org/data/definitions/1188.html) weakness, you have some options:
 
@@ -62,8 +61,7 @@ To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of
 - Modify affected code to use a http client with secure defaults, like
   `Mojo::UserAgent` or `LWP::UserAgent`.
 
-- Patch `HTTP::Tiny` on your system with a [proposed patch](https://salsa.debian.org/perl-team/interpreter/perl/-/commit/1490431e40e22052f75a0b3449f1f53cbd27ba92.patch) from
-  Debian.
+- Patch `HTTP::Tiny` on your system with a [proposed patch](https://salsa.debian.org/perl-team/interpreter/perl/-/commit/1490431e40e22052f75a0b3449f1f53cbd27ba92.patch) that changes the default to `verify_SSL=>1`.
 
 ## Links
 
