@@ -5,7 +5,7 @@ author: sgo
 category: security
 ---
   
-[HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny), is a http client included both in
+[HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny), is a http client included in
 Perl (since v5.13.9) and as a standalone CPAN module. It [does not verify TLS
 certificates by default](https://metacpan.org/pod/HTTP::Tiny#SSL-SUPPORT) requiring users to opt-in with the `verify_SSL=>1` flag to verify the identity of the HTTPS server they are communicating with.
 
