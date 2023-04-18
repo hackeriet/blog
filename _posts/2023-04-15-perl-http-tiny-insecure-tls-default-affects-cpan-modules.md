@@ -33,7 +33,7 @@ behaviour. Distros using it without mentioning `verify_SSL` somewhere in the cod
 Most distributions we found did not enable the certificate verification feature, potentially exposing users to [machine-in-the-middle](https://www.internetsociety.org/resources/doc/2020/fact-sheet-machine-in-the-middle-attacks/Machine-in-the-middle) attacks via a [CWE-295: Improper Certificate Validation](https://cwe.mitre.org/data/definitions/295.html) weakness. 
 
 - [CPAN.pm](https://metacpan.org/pod/CPAN) v2.34 downloads and executes code from
-  `https://cpan.org` without verifying server certs.
+  `https://cpan.org` without verifying server certs. Fixed in [v2.35-TRIAL](https://metacpan.org/release/ANDK/CPAN-2.35-TRIAL).
   ([patch](https://github.com/andk/cpanpm/commit/9c98370287f4e709924aee7c58ef21c85289a7f0))
 - [GitLab::API::v4](https://metacpan.org/dist/GitLab-API-v4) v0.26 exposes API
   secrets to a network attacker.
@@ -76,3 +76,5 @@ To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of
 - [chansen/p5-http-tiny: verify_SSL being true by default (redux) #134](https://github.com/chansen/p5-http-tiny/issues/134)
 - [chansen/p5-http-tiny: Shouldn't verify_SSL be true by default? #68](https://github.com/chansen/p5-http-tiny/issues/68)
 
+## Changes
+- 2023-04-28: Add reference to fixed CPAN.pm v2.35-TRIAL
