@@ -77,4 +77,4 @@ To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of
 - [chansen/p5-http-tiny: Shouldn't verify_SSL be true by default? #68](https://github.com/chansen/p5-http-tiny/issues/68)
 
 ## Changes
-- 2023-04-28: Add reference to fixed CPAN.pm v2.35-TRIAL
+- 2023-04-18: Add reference to fixed CPAN.pm v2.35-TRIAL
