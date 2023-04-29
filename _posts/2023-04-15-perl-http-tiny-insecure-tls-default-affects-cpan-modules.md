@@ -4,8 +4,8 @@ title: "Perl's HTTP::Tiny has insecure TLS default, affecting CPAN.pm and other 
 author: sgo
 category: security
 ---
-  
-[HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny), is a http client included in
+
+\[CVE-2023-31486\] [HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny), is a http client included in
 Perl (since v5.13.9) and also a standalone CPAN module. It [does not verify TLS
 certificates by default](https://metacpan.org/pod/HTTP::Tiny#SSL-SUPPORT) requiring users to opt-in with the `verify_SSL=>1` flag to verify the identity of the HTTPS server they are communicating with.
 
@@ -32,10 +32,10 @@ behaviour. Distros using it without mentioning `verify_SSL` somewhere in the cod
 
 Most distributions we found did not enable the certificate verification feature, potentially exposing users to [machine-in-the-middle](https://www.internetsociety.org/resources/doc/2020/fact-sheet-machine-in-the-middle-attacks/Machine-in-the-middle) attacks via a [CWE-295: Improper Certificate Validation](https://cwe.mitre.org/data/definitions/295.html) weakness. 
 
-- [CPAN.pm](https://metacpan.org/pod/CPAN) v2.34 downloads and executes code from
+- \[CVE-2023-31484\] [CPAN.pm](https://metacpan.org/pod/CPAN) v2.34 downloads and executes code from
   `https://cpan.org` without verifying server certs. Fixed in [v2.35-TRIAL](https://metacpan.org/release/ANDK/CPAN-2.35-TRIAL).
   ([patch](https://github.com/andk/cpanpm/commit/9c98370287f4e709924aee7c58ef21c85289a7f0))
-- [GitLab::API::v4](https://metacpan.org/dist/GitLab-API-v4) v0.26 exposes API
+- \[CVE-2023-31485\] [GitLab::API::v4](https://metacpan.org/dist/GitLab-API-v4) v0.26 exposes API
   secrets to a network attacker.
   ([patch](https://github.com/bluefeet/GitLab-API-v4/pull/57))
 - [Finance::Robinhood](https://metacpan.org/dist/Finance-Robinhood) v0.21 is
@@ -78,3 +78,4 @@ To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of
 
 ## Changes
 - 2023-04-18: Add reference to fixed CPAN.pm v2.35-TRIAL
+- 2023-04-29: Add CVE identifiers CVE-2023-31484, CVE-2023-31485, CVE-2023-31486 
