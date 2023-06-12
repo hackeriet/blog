@@ -54,7 +54,7 @@ Most distributions we found did not enable the certificate verification feature,
 
 ## Mitigations
 
-Upstream for `HTTP::Tiny` has [merged a patch](https://github.com/chansen/p5-http-tiny/pull/153) that changes the insecure default from `0` to `1`. It is available in [HTTP::Tiny v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) on CPAN, and will also be included in perl `v5.38.0`. An escape hatch environment variable `PERL_HTTP_TINY_FORCE_INSECURE_SSL=1` has been provided for users who need to enable the insecure behavior after updating.
+Upstream for `HTTP::Tiny` has [merged a patch](https://github.com/chansen/p5-http-tiny/pull/153) that changes the insecure default from `0` to `1`. It is available in [HTTP::Tiny v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) on CPAN, and will also be included in perl `v5.38.0`. An escape hatch environment variable `PERL_HTTP_TINY_SSL_INSECURE_BY_DEFAULT=1` has been provided for users who need to enable the insecure default behavior after updating.
 
 ~~Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns~~.
 
