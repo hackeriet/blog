@@ -5,7 +5,7 @@ author: sgo
 category: security
 ---
 
-**UPDATE 2023-06-12:** [v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) has been released with a fix.
+**UPDATE 2023-06-12:** [v0.083-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) has been released with a fix.
 
 \[CVE-2023-31486\] [HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny) v0.082, is a http client included in
 Perl (since v5.13.9) and also a standalone CPAN module. It [does not verify TLS
@@ -54,17 +54,17 @@ Most distributions we found did not enable the certificate verification feature,
 
 ## Mitigations
 
-Upstream for `HTTP::Tiny` has [merged a patch](https://github.com/chansen/p5-http-tiny/pull/153) that changes the insecure default from `0` to `1`. It is available in [HTTP::Tiny v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) on CPAN, and will also be included in perl `v5.38.0`. 
-
-> An escape hatch environment variable `PERL_HTTP_TINY_SSL_INSECURE_BY_DEFAULT=1` has been provided for users who need to restore the previous insecure default  after updating.
-
 ~~Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns~~.
+
+Upstream for `HTTP::Tiny` has [merged a patch](https://github.com/chansen/p5-http-tiny/pull/153) that changes the insecure default from `0` to `1`. It is available in [HTTP::Tiny v0.083-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) on CPAN, and will also be included in perl `v5.38.0`. 
+
+> An escape hatch environment variable `PERL_HTTP_TINY_SSL_INSECURE_BY_DEFAULT=1` has been provided for users who need to restore the previous insecure default after updating.
 
 For additional information, please see the upstream discussion in [RFC: Making SSL_verify safer](https://github.com/chansen/p5-http-tiny/issues/152).
 
 To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of Resource](https://cwe.mitre.org/data/definitions/1188.html) weakness, you have some options:
 
-- Ensure that `HTTP::Tiny` in your include path is [v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) or newer.
+- Ensure that `HTTP::Tiny` in your include path is [v0.083-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) or newer.
 
 - Modify affected code using `HTTP::Tiny` and set `verify_SSL=>1`.
 
