@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Perl's HTTP::Tiny has insecure TLS default, affecting CPAN.pm and other modules"
+title: "Perl HTTP::Tiny has insecure TLS default, affecting CPAN.pm and other modules"
 author: sgo
 category: security
 ---
 
-**UPDATE 2023-06-12:** [HTTP::Tiny v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) has been released with a fix.
+**UPDATE 2023-06-12:** [v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) has been released with a fix.
 
 \[CVE-2023-31486\] [HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny) v0.082, is a http client included in
 Perl (since v5.13.9) and also a standalone CPAN module. It [does not verify TLS
