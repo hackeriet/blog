@@ -87,6 +87,7 @@ To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of
 - [chansen/p5-http-tiny: Shouldn't verify_SSL be true by default? #68](https://github.com/chansen/p5-http-tiny/issues/68)
 
 ## Changes
-- 2023-06-12: Add references to fix applied to HTTP::Tiny, GitLab::API::v4, and suggestion to update Mozilla::CA
 - 2023-04-18: Add reference to fixed CPAN.pm v2.35-TRIAL
-- 2023-04-29: Add CVE identifiers CVE-2023-31484, CVE-2023-31485, CVE-2023-31486 
+- 2023-04-29: Add CVE identifiers CVE-2023-31484, CVE-2023-31485, CVE-2023-31486
+- 2023-06-12: Add references to fix applied to HTTP::Tiny, GitLab::API::v4, and suggestion to update Mozilla::CA
+
