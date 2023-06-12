@@ -54,7 +54,9 @@ Most distributions we found did not enable the certificate verification feature,
 
 ## Mitigations
 
-Upstream for `HTTP::Tiny` has [merged a patch](https://github.com/chansen/p5-http-tiny/pull/153) that changes the insecure default from `0` to `1`. It is available in [HTTP::Tiny v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) on CPAN, and will also be included in perl `v5.38.0`. An escape hatch environment variable `PERL_HTTP_TINY_SSL_INSECURE_BY_DEFAULT=1` has been provided for users who need to enable the insecure default behavior after updating.
+Upstream for `HTTP::Tiny` has [merged a patch](https://github.com/chansen/p5-http-tiny/pull/153) that changes the insecure default from `0` to `1`. It is available in [HTTP::Tiny v0.83-TRIAL](https://metacpan.org/release/DAGOLDEN/HTTP-Tiny-0.083-TRIAL/) on CPAN, and will also be included in perl `v5.38.0`. 
+
+> An escape hatch environment variable `PERL_HTTP_TINY_SSL_INSECURE_BY_DEFAULT=1` has been provided for users who need to restore the previous insecure default  after updating.
 
 ~~Upstream for `HTTP::Tiny` has not provided a patch or mitigation. Suggestions to change the insecure default has been turned down several times over the years due to backwards compatibility concerns~~.
 
@@ -71,7 +73,7 @@ To mitigate the risk caused by the [CWE-1188: Insecure Default Initialization of
 
 - Patch `HTTP::Tiny` on your system with [a patch](https://github.com/chansen/p5-http-tiny/commit/77f557ef84698efeb6eed04e4a9704eaf85b741d.patch) that changes the default to `verify_SSL=>1`.
 
-> **NOTE:** It's recommended that users update [Mozilla::CA](https://metacpan.org/pod/Mozilla::CA) as well, since `HTTP::Tiny` defaults to trusting certificates provided by that module. Alternatively the environment variable `SSL_CERT_FILE` can be set to point to the system trust store.
+> It's recommended that users update [Mozilla::CA](https://metacpan.org/pod/Mozilla::CA) as well, since `HTTP::Tiny` defaults to trusting certificates provided by that module. Alternatively the environment variable `SSL_CERT_FILE` can be set to point to the system trust store.
 
 ## Links
 - [chansen/p5-http-tiny: Change verify_SSL default to 1, add ENV var to enable insecure default \[CVE-2023-31486\] #153](https://github.com/chansen/p5-http-tiny/pull/153)
