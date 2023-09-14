@@ -17,7 +17,7 @@ This was a totally uncomplicated crate without anything special in it.
 ```
 DEBEMAIL="my.email@example.com"
 DEBFULLNAME="First-name Last-name"
-CHROOT=unstable-amd64-sbuild
+CHROOT=debcargo-unstable-amd64-sbuild
 export DEBEMAIL DEBFULLNAME CHROOT
 ```
 
