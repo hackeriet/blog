@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Supply Chain Issues in PyPi"
+title: "Supply Chain Issues in PyPI"
 author: wayphinder
 category: security
 ---
