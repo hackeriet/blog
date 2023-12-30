@@ -7,7 +7,7 @@ category: hardware
 # DIY Hardware for DMX LED Pot Control with WLED
 Hackeriet at one point aquired a few Fun Generation LED pots, and one of the strong selling arguments for us was the knowledge that they supported DMX.
 
-"DMX (Digital Multiplex) is a protocol used to control devices such as lights or fog machines. The signal is unidirectional, meaning it only travels in one direction; from the controller or first light, all the way to the last. In its most basic form, DMX is just a protocol for lights, like how MIDI is for keyboards or DAW controllers." [1] 
+"DMX (Digital Multiplex) is a protocol used to control devices such as lights or fog machines. The signal is unidirectional, meaning it only travels in one direction; from the controller or first light, all the way to the last. In its most basic form, DMX is just a protocol for lights, like how MIDI is for keyboards or DAW controllers." [^1] 
 
 This is not a blogpost about DMX, in this blogpost we will focus on the hardware we put together to be able to control these lights via a web application called WLED.
 
@@ -16,7 +16,7 @@ This is not a blogpost about DMX, in this blogpost we will focus on the hardware
  - Junction box
  - Sacrificial XLR cable
  - 5v power supply
- - D1 mini (ESP-8266EX board) [2]
+ - D1 mini (ESP-8266EX board) [^2]
  - MAX485 module
  - A few header pins and wire of choice
 
@@ -56,5 +56,6 @@ Read them both roughly before starting.
 I got friendly advice from people around me to let the lamps use the channels 10, 20, 30 and 40, and set them all to 4 channel setup (this should avoid some issues, altought I am blissfully unaware of any details.) and then it was a trick to set the LED setup in the WLED to the correct number of lamps, this is to ensure that animations know how many points of lights it has available to play with.
 
 ### References
-1 - https://www.sweetwater.com/sweetcare/articles/understanding-dmx/#What%20Is%20DMX
-2 - https://www.wemos.cc/en/latest/d1/d1_mini.html
+[^1] - https://www.sweetwater.com/sweetcare/articles/understanding-dmx/#What%20Is%20DMX
+
+[^2] - https://www.wemos.cc/en/latest/d1/d1_mini.html
