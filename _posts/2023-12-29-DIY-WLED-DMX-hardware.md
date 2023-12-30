@@ -4,7 +4,6 @@ title: "DIY Hardware for DMX LED Pot Control with WLED"
 author: atluxity
 category: hardware
 ---
-# DIY Hardware for DMX LED Pot Control with WLED
 Hackeriet at one point aquired a few Fun Generation LED pots, and one of the strong selling arguments for us was the knowledge that they supported DMX.
 
 "DMX (Digital Multiplex) is a protocol used to control devices such as lights or fog machines. The signal is unidirectional, meaning it only travels in one direction; from the controller or first light, all the way to the last. In its most basic form, DMX is just a protocol for lights, like how MIDI is for keyboards or DAW controllers." [^1] 
