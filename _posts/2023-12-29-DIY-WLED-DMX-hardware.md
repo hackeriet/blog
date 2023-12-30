@@ -56,6 +56,6 @@ Read them both roughly before starting.
 I got friendly advice from people around me to let the lamps use the channels 10, 20, 30 and 40, and set them all to 4 channel setup (this should avoid some issues, altought I am blissfully unaware of any details.) and then it was a trick to set the LED setup in the WLED to the correct number of lamps, this is to ensure that animations know how many points of lights it has available to play with.
 
 ### References
-[^1] - https://www.sweetwater.com/sweetcare/articles/understanding-dmx/#What%20Is%20DMX
+[^1]: https://www.sweetwater.com/sweetcare/articles/understanding-dmx/#What%20Is%20DMX
 
-[^2] - https://www.wemos.cc/en/latest/d1/d1_mini.html
+[^2]: https://www.wemos.cc/en/latest/d1/d1_mini.html
