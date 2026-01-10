@@ -5,6 +5,8 @@ author: atluxity
 category: meta
 ---
 
+![assembly-table](/images/39c3-table-cropped.jpg)
+
 This year, many Hackeriet members attended the 39th Chaos Communication Congress. It was a blast! As part of our ongoing effort to improve how we organize these trips, we held a lessons-learned meetup afterward. Around 15 people joined the meeting, and there was good engagement and a strong willingness to contribute.
 
 There was broad agreement that this year’s congress worked well from a Norwegian perspective. Notes were prepared in advance and added during the meeting; these are available at https://pad.hackeriet.no/40C3. The pad is now read-only unless you are logged in. The discussion itself went far beyond what makes sense to fully document. This post focuses on concrete decisions, with the intent of making it easier for others to join in and contribute.
