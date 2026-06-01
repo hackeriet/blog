@@ -12,3 +12,4 @@ package.json
 *.iml
 .jekyll-cache
 *.kdev4
+vendor/
