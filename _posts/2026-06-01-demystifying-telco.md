@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Demystifying Telco Connections: SIP, SIMs, and the Network in Between
+title: Demystifying Telco Connections - SIP, SIMs, and the Network in Between
 author: atluxity
 category: security
 ---
