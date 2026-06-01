@@ -15,7 +15,7 @@ Modern mobile calling is several ordinary systems stacked together: DNS, IPsec, 
 
 ## Start With Fraud
 
-The research started with phishing groups. Not the abstract kind of phishing where someone says "users should be more careful," but the infrastructure behind messages that look like Autopass, Posten, bank warnings, and delivery notices.
+The research started with phishing groups. The infrastructure behind messages that look like Autopass, Posten, bank warnings, and delivery notices.
 
 That led to SIM farms. A SIM farm is a rack of SIM cards attached to hardware that can send messages through a web interface or API. Europol has published examples from cybercrime-as-a-service cases. The hardware is modems, SIM slots, management software, and enough automation to send at scale.
 
