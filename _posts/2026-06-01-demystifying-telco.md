@@ -9,7 +9,7 @@ We at Hackeriet had the great pleasure of hosting a workshop by Harrison Sand. H
 
 Think of this post as a map. The point is to connect the pieces well enough that a responsible researcher that can read a pcap can recognize the trust boundaries, and know what needs authorization before touching anything live.
 
-Modern mobile calling is several ordinary systems stacked together: DNS, IPsec, SIM-backed authentication, carrier profiles, SIP, and operator policy.
+Bottom line up front, modern mobile calling is several ordinary systems stacked together: DNS, IPsec, SIM-backed authentication, carrier profiles, SIP, and operator policy.
 
 <!-- excerpt -->
 
