@@ -25,13 +25,11 @@ Wi-Fi Calling adds another question: if a phone can act like a normal subscriber
 
 ## Two Research Paths
 
-There are two paths through the material.
+There are two paths through the material. The first path teaches observation. The second teaches architecture. It can be smart to try to keep them separated mentaly.
 
 One path starts with your phone. Plug in your own device, capture your own traffic, and look at what the handset and network exchange. On iPhone, Remote Virtual Interface capture can expose several interfaces. One of those views can show SIP traffic that would otherwise feel hidden behind the modem and IPsec. Android varies by device, firmware, modem, and access level.
 
 The other path starts with the subscriber connection. A Wi-Fi Calling client has to find the operator's ePDG, authenticate using SIM-backed material, receive inner connectivity, and register to IMS over SIP.
-
-The first path teaches observation. The second teaches architecture. Keep them separate in your head.
 
 ## The Subscriber Path
 
